@@ -17,6 +17,15 @@ class WorkoutInitial extends WorkoutState{
   List<Object?> get props => [];
 }
 
+class WorkoutIntProgress extends WorkoutState{
+  const WorkoutIntProgress(Workout? workout, int? elapsed):
+        super(workout, elapsed);
+
+  @override
+  // TODO: implement props
+  List<Object?> get props => [workout, elapsed];
+}
+
 class WorkoutEditing extends WorkoutState{
   final int? exIndex;
   final int index;

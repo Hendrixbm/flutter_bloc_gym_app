@@ -20,10 +20,10 @@ class Workout extends Equatable{
 
   Workout copyWith({String? title})=>Workout(title: title??this.title, exercises: exercises);
 
-  int getTotal(){
-    int time = exercises.fold(0, (prev, ex) =>prev + ex.duration! + ex.prelude!);
-    return time;
-  }
+  int getTotal() => exercises.fold(0, (prev, ex) =>prev + ex.duration! + ex.prelude!);
+
+  //Last smallest element object
+  Exercise getCurrentExercise(int? elapsed)=> exercises.lastWhere((element) => element.startTime! <= elapsed!);
 
   @override
   // TODO: implement props
