@@ -19,6 +19,10 @@ class WorkoutCubit extends Cubit<WorkoutState>{
     emit(WorkoutEditing(state.workout, (state as WorkoutEditing).index, exIndex));
   }
 
+  pauseWorkout()=>emit(WorkoutPaused(state.workout, state.elapsed));
+
+resumeWorkout()=>emit(WorkoutIntProgress(state.workout, state.elapsed));
+
   goHome()=> emit(const WorkoutInitial());
 
   onTick(Timer timer){
